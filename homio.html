@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typing Speed Test</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #ffffff;
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      margin: 0;
+    }
+
+    h1 {
+      text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+    }
+
+    button {
+      transition: transform 0.3s ease, background-color 0.4s ease;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 5px 10px rgba(255, 255, 255, 0.2);
+    }
+
+    footer {
+      border-top: 1px solid #555;
+      padding-top: 1rem;
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .card {
+      background: linear-gradient(145deg, #3e5151, #decba4);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      color: #000;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    }
+
+    .navbar {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 0.5rem 2rem;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+    }
+
+    .navbar a {
+      color: #fff;
+      margin: 0 1rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      color: #f39c12;
+    }
+
+    .animated-background {
+      animation: backgroundAnimation 8s infinite alternate;
+    }
+
+    @keyframes backgroundAnimation {
+      0% {
+        background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      }
+      100% {
+        background: linear-gradient(to left, #0f2027, #203a43, #2c5364);
+      }
+    }
+
+    .center-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: calc(100vh - 4rem);
+      text-align: center;
+      margin-top: 4rem;
+    }
+
+    .content-wrapper {
+      max-width: 800px;
+      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 1rem;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body class="animated-background min-h-screen">
+  <div class="navbar">
+    <a href="#">Home</a>
+    <a href="#features">Features</a>
+    <a href="#leaderboard">Leaderboard</a>
+    <a href="#about">About</a>
+  </div>
+
+  <div class="center-container">
+    <div class="content-wrapper">
+      <h1 class="text-5xl font-bold mb-6">Welcome to Typing Speed Test</h1>
+      <p class="text-xl mb-8">Test your typing skills and improve your speed and accuracy.</p>
+
+      <div class="flex justify-center space-x-4">
+        <button class="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-full">Start Test</button>
+        <button class="px-8 py-4 bg-gray-700 hover:bg-gray-600 text-white font-bold rounded-full">Leaderboard</button>
+        <button class="px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-full">About</button>
+      </div>
+
+      <div class="mt-12 text-gray-200">
+        <p class="text-lg">Track your progress:</p>
+        <ul class="list-disc list-inside mt-2">
+          <li>Words Per Minute (WPM)</li>
+          <li>Accuracy Percentage</li>
+          <li>Time Taken</li>
+        </ul>
+      </div>
+
+      <div class="mt-16" id="features">
+        <h2 class="text-3xl font-bold mb-6">Features</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="card rounded-lg p-6">
+            <h3 class="text-lg font-semibold mb-3">Real-Time Typing Analysis</h3>
+            <p>Get instant feedback on your typing speed and accuracy as you type.</p>
+          </div>
+          <div class="card rounded-lg p-6">
+            <h3 class="text-lg font-semibold mb-3">Personalized Reports</h3>
+            <p>View detailed reports of your typing performance over time.</p>
+          </div>
+          <div class="card rounded-lg p-6">
+            <h3 class="text-lg font-semibold mb-3">Customizable Tests</h3>
+            <p>Choose test durations and difficulty levels to match your skill.</p>
+          </div>
+          <div class="card rounded-lg p-6">
+            <h3 class="text-lg font-semibold mb-3">Leaderboard</h3>
+            <p>Compete with others and see how you rank globally.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-16" id="leaderboard">
+        <h2 class="text-3xl font-bold mb-6">Leaderboard</h2>
+        <p class="text-gray-300">Coming soon: Compete with players worldwide and climb the ranks!</p>
+      </div>
+
+      <footer class="mt-20 text-gray-400 text-sm">
+        <p>&copy; 2025 Typing Speed Test. All rights reserved.</p>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

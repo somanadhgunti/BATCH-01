@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Typing Test</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 800px;
+      margin: 0 auto;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #4caf50;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+
+    #typing-area {
+      margin: 20px 0;
+      padding: 20px;
+      background-color: #f0f0f0;
+      color: #333;
+      border-radius: 10px;
+      font-size: 1.2em;
+      text-align: left;
+    }
+
+    #typing-area span.correct {
+      color: #4caf50;
+    }
+
+    #typing-area span.incorrect {
+      color: #f44336;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      font-size: 18px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .result {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+
+    .result div {
+      font-size: 1.2em;
+      padding: 10px;
+      background-color: #f0f0f0;
+      border-radius: 5px;
+    }
+
+    .result div p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Typing Speed Test</h1>
+    <p>Start typing the text below and see your speed and accuracy!</p>
+
+    <!-- Display the paragraph for the typing test -->
+    <div id="typing-area"></div>
+
+    <!-- Input field to type in -->
+    <input type="text" id="input-field" placeholder="Start typing..." />
+
+    <div class="result">
+      <div>
+        <p>Time Left</p>
+        <span id="time">60</span>
+      </div>
+      <div>
+        <p>Errors</p>
+        <span id="errors">0</span>
+      </div>
+      <div>
+        <p>WPM</p>
+        <span id="wpm">0</span>
+      </div>
+      <div>
+        <p>CPM</p>
+        <span id="cpm">0</span>
+      </div>
+    </div>
+
+    <button id="try-again-button">Try Again</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

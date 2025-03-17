@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leaderboard - Typing Speed Test</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+</head>
+<body>
+  <div class="container">
+    <h1>Typing Speed Test Leaderboard</h1>
+    <div class="leaderboard-box">
+      <table>
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>WPM</th>
+          </tr>
+        </thead>
+        <tbody id="leaderboard-list">
+          <!-- Leaderboard entries will go here -->
+        </tbody>
+      </table>
+      <div class="form-container">
+        <label for="player-name">Enter Your Name:</label>
+        <input type="text" id="player-name" placeholder="Your Name">
+        <button id="start-test">Start Test</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Placeholder for leaderboard data (This would normally be saved in a database or localStorage)
+    const leaderboard = [
+      { name: 'rajesh', wpm: 120 },
+      { name: 'ganesh', wpm: 110 },
+      { name: 'rahul', wpm: 105 },
+      { name: 'kumari', wpm: 100 },
+      { name: 'soujith', wpm: 95 },
+      { name: 'franklin ramesh', wpm: 90 },
+      { name: 'devara', wpm: 85 },
+      { name: 'kalyan', wpm: 80 },
+      { name: 'nawin', wpm: 75 },
+      { name: 'ramesh model', wpm: 70 }
+    ];
+
+    // Function to display leaderboard
+    function displayLeaderboard() {
+      const leaderboardList = document.getElementById('leaderboard-list');
+      leaderboardList.innerHTML = '';
+      leaderboard.forEach((entry, index) => {
+        const row = `<tr>
+                      <td>${index + 1}</td>
+                      <td>${entry.name}</td>
+                      <td>${entry.wpm}</td>
+                    </tr>`;
+        leaderboardList.innerHTML += row;
+      });
+    }
+
+    // Display leaderboard when page loads
+    displayLeaderboard();
+
+    // Handle test start
+    document.getElementById('start-test').addEventListener('click', () => {
+      const playerName = document.getElementById('player-name').value;
+      if (playerName.trim() === '') {
+        alert('Please enter your name!');
+        return;
+      }
+      localStorage.setItem('playerName', playerName);
+      window.location.href = 'index.html'; // Navigate to the typing test page
+    });
+  </script>
+</body>
+</html>
